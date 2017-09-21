@@ -249,9 +249,7 @@
 
         setOptions: function (suppliedOptions) {
             var that = this,
-                options = that.options;
-
-            this.options = $.extend({}, options, suppliedOptions);
+                options = $.extend({}, that.options, suppliedOptions);
 
             that.isLocal = Array.isArray(options.lookup);
 
@@ -267,6 +265,8 @@
                 'width': options.width + 'px',
                 'z-index': options.zIndex
             });
+
+            this.options = options;            
         },
 
 
