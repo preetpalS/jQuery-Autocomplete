@@ -70,7 +70,7 @@
         that.isLocal = false;
         that.suggestionsContainer = null;
         that.noSuggestionsContainer = null;
-        that.options = $.extend({}, Autocomplete.defaults, options);
+        that.options = $.extend(true, {}, Autocomplete.defaults, options);
         that.classes = {
             selected: 'autocomplete-selected',
             suggestion: 'autocomplete-suggestion'
@@ -164,7 +164,6 @@
                 options = that.options,
                 container;
 
-            // Remove autocomplete attribute to prevent native suggestions:
             that.element.setAttribute('autocomplete', 'off');
 
             // html() deals with many types: htmlString or Element or Array or jQuery
